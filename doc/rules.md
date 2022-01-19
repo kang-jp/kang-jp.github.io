@@ -1,1 +1,0 @@
-Here I write about rules for coding, naming branches, writing docs, etc.
