@@ -11,8 +11,8 @@ function getUnitTime(){
 
 
 
-function advanceClock(date){
-  var twoDigit = function (num) {
+function advanceClock(date:Date){
+  var twoDigit = function (num:number) {
     var digit
     if( num < 10 ){ 
       digit = "0" + num; 
@@ -31,6 +31,6 @@ function advanceClock(date){
   document.getElementById("strange_clock_time").textContent = hour + ":" + minute + ":" + second;
 }
 
-strange_date = new Date();
+var strange_date = new Date();
 
 setInterval(advanceClock, 1000, strange_date);
