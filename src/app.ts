@@ -9,7 +9,9 @@ function getUnitTime(){
   }
 }
 
-
+function getNextMilliSeconds(){
+  return 1000 - ( Date.now() % 1000 );
+}
 
 function advanceClock(date:Date){
   var twoDigit = function (num:number) {
@@ -33,4 +35,7 @@ function advanceClock(date:Date){
 
 var strange_date = new Date();
 
-setInterval(advanceClock, 1000, strange_date);
+setTimeout(function main(){
+  advanceClock(strange_date);
+  setTimeout(main,getNextMilliSeconds())
+},getNextMilliSeconds())
